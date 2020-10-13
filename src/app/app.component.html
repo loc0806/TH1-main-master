@@ -1,0 +1,72 @@
+<span>{{ today|dateVN  }}</span>
+<app-menu></app-menu>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2"  style="text-align: right;">
+     Nhập tên:
+    </div>
+    <div class="col-sm-8">
+      <input type="text" [(ngModel)]="a"  style="width: 100%;" [value]="a" >
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2" style="text-align: right;">
+     Nhập lớp:
+    </div>
+    <div class="col-sm-8">
+      <input type="text" [(ngModel)]="b"  style="width: 100%; margin-top: 10px;" [value]="b">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2"> 
+    </div> 
+    <div class="col-sm-8" style="text-align: left;">
+      <table class="table table-strip table-hover">
+        <thead>
+        <th>Họ Tên</th>
+        <th>Lớp</th>
+       
+        <th>Xóa</th> 
+      </thead>
+      <tbody>
+        <tr *ngFor = "let sv of columns" (click)="getSV(sv.hoten,sv.lop)">
+          <td>{{ sv.hoten }}</td>
+          <td>{{ sv.lop }}</td>
+         
+          <td (click)="Xoa(sv.hoten)"><button class="btn btn-success"><i>Xóa</i></button></td>
+        </tr>
+      </tbody>
+      </table>
+    </div> 
+  </div>
+  <div class="row">
+    <div class="col-sm-4"> 
+    </div> 
+    <div class="col-sm-4" style="text-align: right; margin-top: 10px;">
+      <button class="btn btn-info" (click)="Them()" [disabled]="a==null || b==null" >Thêm</button>
+    </div> 
+    <div class="col-sm-4" style="margin-top: 10px;">
+      <button class="btn btn-danger" (click)="Tinh()" [disabled]="columns.length <= 3" >Sắp Xếp</button>
+      <button class="btn btn-success" (click)="Sua(a,b)" >Sửa</button>
+    </div> 
+    
+  </div> 
+  <div class="row">
+    <div class="col-sm-2">
+
+    </div>
+    <div class="col-sm-8">
+      <span class="label label-danger">{{ mess }}</span>
+    </div>
+  </div>
+</div>
+<hr>
+<app-bai1></app-bai1>
+<hr>
+<app-bai2></app-bai2>
+<hr>
+<app-bai3></app-bai3>
+<hr>
+<app-bai4></app-bai4> 
+<app-bai5></app-bai5>

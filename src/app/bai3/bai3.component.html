@@ -1,0 +1,51 @@
+<h1>Bài 4</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <h3>Danh sách</h3>
+            <table class="table table-strip table-hover">
+                <thead>
+                    <th>Họ và tên</th>
+                    <th>Điểm thi</th>
+                    <th>Quê quán</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sv of s">
+                        <td>{{ sv.hoten }}</td>
+                        <td>{{ sv.diemthi }}</td>
+                        <td>{{ sv.quequan }}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <div class="col-sm-4">
+            <h3>Kết quả</h3>
+            <table class="table table-strip table-hover">
+                <thead>
+                    <th>Họ và tên</th>
+                    <th>Điểm thi</th>
+                    <th>Quê quán</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sv of rs">
+                        <td>{{ sv.hoten }}</td>
+                        <td>{{ sv.diemthi }}</td>
+                        <td>{{ sv.quequan }}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-2">
+            <button (click)="Loc()" class="btn btn-info">Lọc sinh viên</button>
+        </div>
+       
+    </div>
+</div>
+

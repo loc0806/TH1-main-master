@@ -1,0 +1,32 @@
+<h1>Bài 5+6</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            Nhập chuỗi : <input type="text" [(ngModel)]="a" name="" id=""> 
+        </div>
+        <div [class]="class" role="alert">
+            {{ mess }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <table class="table table-strip">
+                <thead>
+                    <th *ngFor="let sn of tam">{{ sn }}</th>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-3">
+            <button (click)="locCP()" class="btn btn-success">Lọc số chính phương</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-info" (click)="tongNguyen()">Tổng nguyên là : <span class="badge">{{ tong }}</span></button>
+        </div>
+
+    </div>
+</div>
